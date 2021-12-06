@@ -15,35 +15,15 @@ on:
 #Steps can run commands, setup tasks or run an action
 jobs:
   build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
 
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9", "3.10"]
-    
-    #to run on multiple environments
-    #runs-on: ${{matrix.os}}
-    #strategy:
-      #matrix:
-      #os: [ubuntu-latest, windows-latest, macOs-latest]
-
-    steps:
-    #to test the project with a .test file
-    #- name: Test with pytest
-      #run: |
-        #pytest
-
-    #DockerHub integration
-      - uses: actions/checkout@v2
-      
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          tag_with_ref: true
-          tag_with_sha: true
-          add_git_labels: true
-          always_pull: true
-        
+            -   name: Build and push docker image
+                uses: docker/build-push-action@v1
+                with:
+                    username: ${{ secrets.DOCKER_USERNAME }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}
+                    dockerfile: Dockerfile
+                    repository: my/repository
+                    tag_with_ref: true
