@@ -64,6 +64,5 @@ jobs:
         #image: antoniomm8506/githubactions_practice
         #tags: practice, python
         dockerfile: Dockerfile
-        repository: AntonioMM8506/githubActions_practice
         tag_with_ref: true
 
