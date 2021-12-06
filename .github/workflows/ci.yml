@@ -63,5 +63,5 @@ jobs:
         tags: practice, latest, python
         registry: registry-url.io
         dockerfile: Dockerfile.ci
-        username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        username: ${{ env.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
+        password: ${{ env.DOCKER_PASSWORD }}
