@@ -11,7 +11,7 @@ build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-
+            - run: docker build --file ./api/Service/Dockerfile --tag my-image-name:$(date +%s)
             -   name: Build and push docker image
                 uses: docker/build-push-action@v1
                 with:
