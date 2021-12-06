@@ -21,5 +21,5 @@ class CasillaDeVotacion:
         raise ValueError(f"La region {region} no es valida en self ._pais")
 
 
-    casilla = CasillaDeVotacion(123, ["CDMX", "Morelos"])
-    casilla.region = "CDMX"
+    #casilla = CasillaDeVotacion(123, ["CDMX", "Morelos"])
+    #casilla.region = "CDMX"
