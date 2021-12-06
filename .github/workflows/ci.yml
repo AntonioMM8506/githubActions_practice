@@ -56,8 +56,8 @@ jobs:
         #pytest
     
     #DockerHub integration
-    - uses: mr-smithers-excellent/docker-build-push@v5
-      name: Build and Push Docker Image  
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v5 
         with:
           image: antoniomm8506/githubactions_practice
           registry: docker.io
