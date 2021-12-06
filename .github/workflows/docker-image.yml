@@ -10,8 +10,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Docker image
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Checkout code
+      uses: actions/checkout@v2
+    
+      - name: Build and push Docker image
+        id:   docker_build
         uses: docker/build-push-action@v2
         with:
-          push: false
-          tags: ${{ github.event.repository.name }}:latest, ${{ github.repository }}:latest
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
