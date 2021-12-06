@@ -57,10 +57,12 @@ jobs:
     
     #DockerHub integration
     - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v5 
+      uses: docker/build-push-action@v1
       with:
-        image: antoniomm8506/githubactions_practice
-        registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
         password: ${{ secrets.DOCKER_PASSWORD }}
-
+        tag_with_ref: true
+        tag_with_sha: true
+        add_git_labels: true
+        always_pull: true
+        
