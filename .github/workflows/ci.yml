@@ -31,6 +31,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2 #uses: selects an action, under path "action/" the reusable code is hosted
     
+    #Build for Pyhton ----------------------------------------------------
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -55,6 +56,7 @@ jobs:
       #run: |
         #pytest
 
+    #Build for Docker --------------------------------------------------------
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
