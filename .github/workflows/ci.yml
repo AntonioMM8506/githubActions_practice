@@ -21,6 +21,12 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
+    
+    #to run on multiple environments
+    #runs-on: ${{matrix.os}}
+    #strategy:
+      #matrix:
+      #os: [ubuntu-latest, windows-latest, macOs-latest]
 
     steps:
     - uses: actions/checkout@v2 #uses: selects an action, under path "action/" the reusable code is hosted
@@ -38,12 +44,22 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Lint with flake8
-      run: |
+      run: | #for multiple line in yaml
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
+    #to test the project with a .test file
     #- name: Test with pytest
       #run: |
         #pytest
+    
+    #Docker integration
+    - name: Build and Push Docker Image  
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: antoniomm8506/githubactions_practice
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
+        password: ${{ secrets.DOCKER_PASSWORD }}
