@@ -25,7 +25,7 @@ jobs:
         with:
           push: true
           #tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-          tags: antoniomm8506/gha
+          tags: antoniomm8506/gha_python_practice
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
