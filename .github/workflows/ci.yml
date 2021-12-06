@@ -61,7 +61,6 @@ jobs:
       with:
         image: antoniomm8506/githubactions_practice
         registry: docker.io
-        dockerfile: Dockerfile.ci
         username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
         password: ${{ secrets.DOCKER_PASSWORD }}
 
