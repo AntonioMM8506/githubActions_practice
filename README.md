@@ -1,14 +1,13 @@
 # GitHub Actions Practice
-##**PLatzi Object Oriented Programing Course - Platzi**
+##PLatzi Object Oriented Programing Course - Platzi
 
-![image]({https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white})
-![image]({https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white})
-![image]({https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
-})
-![image]({https://komarev.com/ghpvc/?username = AntonioMM8506})
+<img src="{https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white}" />
+<img src="{https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white}" />
+<img src="{https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white}" />
+<img src=https://komarev.com/ghpvc/?username = AntonioMM8506/>
 ![Your Repository’s Stats](https://github-readme-stats.vercel.app/api?username=AntonioMM8506&show_icons=true)
 
-###**Reprodcution Steps**
+###Reprodcution Steps
 
 1. Create an empty repository and commit some files, as a normal project
 2. Go to `Actions` tab and select `New Workflow`, for this example I used `Python Package`
