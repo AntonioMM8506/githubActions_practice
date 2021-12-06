@@ -62,6 +62,6 @@ jobs:
         #image: antoniomm8506/githubactions_practice
         tags: practice, python
         #registry: docker.pkg.github.com
-        #dockerfile: Dockerfile
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }} #in gitHub repo, got to Settings/Secrets
         password: ${{ secrets.DOCKER_PASSWORD }}
