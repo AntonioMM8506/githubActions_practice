@@ -54,7 +54,8 @@ jobs:
     #- name: Test with pytest
       #run: |
         #pytest
-    
+    - uses: actions/checkout@v2
+
     #DockerHub integration
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v1
