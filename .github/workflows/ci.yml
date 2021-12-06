@@ -15,15 +15,43 @@ on:
 #Steps can run commands, setup tasks or run an action
 jobs:
   build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
 
-            -   name: Build and push docker image
-                uses: docker/build-push-action@v1
-                with:
-                    username: ${{ secrets.DOCKER_USERNAME }}
-                    password: ${{ secrets.DOCKER_PASSWORD }}
-                    dockerfile: Dockerfile
-                    #repository: my/repository
-                    tag_with_ref: true
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    
+    #to run on multiple environments
+    #runs-on: ${{matrix.os}}
+    #strategy:
+      #matrix:
+      #os: [ubuntu-latest, windows-latest, macOs-latest]
+
+    steps:
+    - uses: actions/checkout@v2 #uses: selects an action, under path "action/" the reusable code is hosted
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      #run: runs a command-line command
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
+    - name: Lint with flake8
+      run: | #for multiple line in yaml
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    #to test the project with a .test file
+    #- name: Test with pytest
+      #run: |
+        #pytest
+        
