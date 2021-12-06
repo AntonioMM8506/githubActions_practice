@@ -1,9 +1,11 @@
 # GitHub Actions Practice
 ## PLatzi Object Oriented Programing Course - Platzi
 
-<img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://komarev.com/ghpvc/?username=AntonioMM8506"/>
+<img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> 
 
-![Your Repository’s Stats](https://github-readme-stats.vercel.app/api?username=AntonioMM8506&show_icons=true)
+<img src="https://komarev.com/ghpvc/?username=AntonioMM8506"/>
+
+![Your Repository’s Stats](https://github-readme-stats.vercel.app/api?username=AntonioMM8506&show_icons=true)  ![example workflow](https://github.com/AntonioMM8506/githubActions_practice/actions/workflows/ci.yml/badge.svg)
 
 ### Reprodcution Steps
 
