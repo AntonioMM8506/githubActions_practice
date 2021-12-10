@@ -5,8 +5,6 @@
 
 <img src="https://komarev.com/ghpvc/?username=AntonioMM8506"/> [![Python package](https://github.com/AntonioMM8506/githubActions_practice/actions/workflows/ci.yml/badge.svg)](https://github.com/AntonioMM8506/githubActions_practice/actions/workflows/ci.yml)
 
-![Your Repository’s Stats](https://github-readme-stats.vercel.app/api?username=AntonioMM8506&show_icons=true)
-
 ### Reprodcution Steps
 
 1. Create an empty repository and commit some files, as a normal project
